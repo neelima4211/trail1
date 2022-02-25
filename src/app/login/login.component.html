@@ -1,0 +1,41 @@
+<section class="my-5 py-5  bg-light">
+    <div class="container m-auto">
+        <div class="row g-0">
+            
+            <div class="col-lg-5">
+               <a href="" routerLink="home"> <img src="https://wallpaperaccess.com/full/1126760.jpg"  class="img-fluid" alt=""></a>
+            </div>
+    
+                <div class="col-lg-7  d-block m-auto">
+                    <h1 class="animate__animated animate__heartBeat text-center">Swagruham</h1>
+    
+                    <form class="form" [formGroup]="loginForm" (submit)="formSubmit()">
+    
+                        <input type="email" class="form-control d-block m-auto shadow-none rounded-pill w-50 text-center mt-3" formControlName="email" placeholder="Email" autocomplete="true">
+                        <div *ngIf=" loginForm.controls['email'].touched && loginForm.controls['email'].invalid" class="text-danger text-center">
+                            <div *ngIf="submitted && loginForm.controls['email'].errors?.['required']">email is required</div>
+                            <div *ngIf="submitted && loginForm.controls['email'].errors?.['pattern']">must contain AlphaNumerics</div>
+                          </div>
+
+                        <input type="password" class="form-control d-block m-auto shadow-none rounded-pill w-50 text-center mt-3" placeholder="Password" formControlName="password">
+                        <div *ngIf=" loginForm.controls['password'].touched && loginForm.controls['password'].invalid" class="text-danger text-center">
+                            <div *ngIf="submitted && loginForm.controls['password'].errors?.['required']">password is required</div>
+                          </div>
+                                                     
+                       <!--   <div class="form-group">
+                              <label for="file">File</label>
+                              <input  formControlName="file" id="file"  type="file"  class="form-control" multiple=""  (change)="onFileChange($event)">
+                              <div *ngIf="f['file'].touched && f['file'].invalid" class="alert alert-danger">
+                                  <div *ngIf="f['file'].errors['required']">File is required.</div>
+                                </div>
+                            </div>
+                            
+                            <img *ngFor='let url of images'  [src]="url" height="150" width="200px" style="margin: 3px;"> <br/> -->
+                            
+                            <button type="submit" class="btn d-block m-auto my-3 shadow-none button-29" >Log in</button>
+                    </form>
+                    <p class="text-center mb-3">New to  this Page?<a href="" class="text-decoration-none signup" roterLink="">Sign Up</a></p>
+                </div>
+    </div>
+    </div>
+    </section>
