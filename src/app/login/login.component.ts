@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
   // for angular material form
   hide = true;
     loginForm = this.fb.group({
-        email:['',[Validators.required,Validators.pattern("[^@]+@[^@]+\.[a-zA-Z]{2,6}")]],
+        email:['',[Validators.required,Validators.email]],
         password:['',[Validators.required,Validators.minLength(6)]]
         // file:['', [Validators.required]],
         // fileSource:['', [Validators.required]]
