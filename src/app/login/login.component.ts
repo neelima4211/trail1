@@ -8,6 +8,7 @@ import {FormBuilder, FormControl,FormGroup, Validators} from '@angular/forms'
 })
 export class LoginComponent implements OnInit {
   submitted: boolean=false;
+  fileName: string;
 
   constructor(public fb: FormBuilder) { }
 
@@ -15,6 +16,8 @@ export class LoginComponent implements OnInit {
   }
 
   images = [];
+  // for angular material form
+  hide = true;
     loginForm = this.fb.group({
         email:['',[Validators.required,Validators.pattern("[^@]+@[^@]+\.[a-zA-Z]{2,6}")]],
         password:['',[Validators.required,Validators.minLength(6)]]
@@ -57,4 +60,24 @@ export class LoginComponent implements OnInit {
         // this.images=[]
   
       }
+
+
+
+      onFileSelected(event) {
+
+        const file:File = event.target.files[0];
+
+        if (file) {
+
+            this.fileName = file.name;
+
+            const formData = new FormData();
+
+            formData.append("thumbnail", file);
+
+            // const upload$ = this.http.post("/api/thumbnail-upload", formData);
+
+            // upload$.subscribe();
+        }
+    }
 }

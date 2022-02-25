@@ -21,6 +21,17 @@
                         <div *ngIf=" loginForm.controls['password'].touched && loginForm.controls['password'].invalid" class="text-danger text-center">
                             <div *ngIf="submitted && loginForm.controls['password'].errors?.['required']">password is required</div>
                           </div>
+
+                          <div class="example-container">
+                          <mat-form-field appearance="fill">
+                            <mat-label>Enter your password</mat-label>
+                            <input matInput [type]="hide ? 'password' : 'text'">
+                            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                            </button>
+                          </mat-form-field>
+                          </div>
+                        
                                                      
                        <!--   <div class="form-group">
                               <label for="file">File</label>
@@ -32,6 +43,19 @@
                             
                             <img *ngFor='let url of images'  [src]="url" height="150" width="200px" style="margin: 3px;"> <br/> -->
                             
+
+
+                            <input type="file" class="file-input" (change)="onFileSelected($event)" #fileUpload>
+
+                            <div class="file-upload">
+
+                            {{fileName || "No file uploaded yet."}}
+
+                                <button mat-mini-fab color="primary" class="upload-btn btn btn-info" (click)="fileUpload.click()">
+                                    <!-- <mat-icon>attach_file</mat-icon> --> icon
+                                </button>
+                            </div>
+
                             <button type="submit" class="btn d-block m-auto my-3 shadow-none button-29" >Log in</button>
                     </form>
                     <p class="text-center mb-3">New to  this Page?<a href="" class="text-decoration-none signup" roterLink="">Sign Up</a></p>
