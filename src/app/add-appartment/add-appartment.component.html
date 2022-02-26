@@ -1,0 +1,166 @@
+
+<div class="container pt-2">
+    <div class=" pb-2">
+        <form (ngSubmit)= "ref.valid && submit()" #ref="ngForm" [formGroup]="dataOfProperty">
+          <!-- <div formGroupName="ownerDetails" class="text-center"> -->
+    
+            <div class=" text-center">
+
+<!-- 
+                <div class="mx-auto ">
+                    <label for="floatingInput" class="" >Email address</label>
+                    <input type="email" class="form-control  mx-auto " id="floatingInput" >
+                  </div>
+                  <div class="form-floating">
+                    <input type="password" class="form-control" id="floatingPassword" >
+                    <label for="floatingPassword">Password</label>
+                  </div> -->
+
+
+
+
+                <!-- <label for="name" class="font" style="font-size: larger; font-weight: bolder; "> Name</label><br> -->
+              <input type="text" formControlName="ownerName" id="name" class=" d-inline mb-3  mt-5 w-25 mx-2 form-control  hov" placeholder=" Name">
+              <!-- validations name -->
+              <div class="text-danger text-center  d-inline"  *ngIf ="ownerName?.invalid && ownerName?.dirty || ownerName?.touched || ref.submitted"> 
+                <p *ngIf ="ownerName?.errors?.['required'] " class="d-inline" >Please enter the  Name</p>
+                <p *ngIf ="ownerName?.errors?.['minlength']"  class="d-inline">Enter atleast 3 characters</p>
+                <p *ngIf ="ownerName?.errors?.['maxlength']"  class="d-inline">Enter max 15 characters</p>
+              </div> 
+              <!-- <input type="text" formControlName="lastName" id="name" class=" d-inline mb-3  w-25 form-control  hov" placeholder=" Last Name">
+            
+              <div class="text-danger text-center "  *ngIf ="ownerName?.invalid && ownerName?.dirty || ownerName?.touched || ref.submitted"> 
+                <p *ngIf ="lastName?.errors?.['required']" >Please enter the last Name</p>
+                <p *ngIf ="lastName?.errors?.['minlength']">Enter atleast 3 characters</p>
+                <p *ngIf ="lastName?.errors?.['maxlength']">Enter max 30 characters</p>
+              </div>  -->
+
+              <!-- <label for="email" class="font" style="font-size: larger; font-weight: bolder; "> Email </label> -->
+              <input type="email" formControlName="email" id="email" class="  d-inline mb-3  w-25 mx-2 form-control  hov " placeholder="name@example.com">
+              <!-- validations mail -->
+              <div class="text-danger  d-inline  "  *ngIf ="email?.invalid && email?.dirty || email?.touched || ref.submitted "> 
+              <p *ngIf ="email?.errors?.['pattern']  "  class=" d-inline">Please enter the valid Email </p>
+              <p *ngIf ="email?.errors?.['required']" class="d-inline" >Please enter Email </p>
+              </div>
+            </div>
+
+              <!-- <div class="d-flex justify-content-evenly "> -->
+                  <!-- <div class="c1 mx-1"> -->
+                      <div class=" text-center">
+                   
+                  <!-- </div> -->
+<!-- 
+                  <div class="c1"> -->
+                    <!-- <label for="moblieNumber" class="font" style="font-size: larger; font-weight: bolder; "> Moblie No</label> -->
+                    <input type="tel" formControlName="moblieNumber" id="moblieNumber" class=" d-inline mb-3 mx-2 w-25 form-control  hov" placeholder=" Mobile Number">
+                    <!-- validations number -->
+                    <div class="text-danger d-inline"  *ngIf ="moblieNumber?.invalid && moblieNumber?.dirty || moblieNumber?.touched || ref.submitted "> 
+                      <p *ngIf ="moblieNumber?.errors?.['required']"  class="d-inline" >Please enter the  Mobile Number </p>
+                      <p *ngIf ="moblieNumber?.errors?.['minlength']"  class="d-inline">Entered Number is less than 10 digits</p>
+                      <p *ngIf ="moblieNumber?.errors?.['maxlength']" class="d-inline">Invalid Mobile Number</p>
+                      <p *ngIf ="moblieNumber?.errors?.['pattern']"  class="d-inline"> Only Numericals</p>
+                    </div> 
+                </div>
+                  <!-- </div> -->
+              <!-- </div> -->
+          <!-- </div> -->
+
+          <div formGroupName="description">
+            <div class=" text-center">
+                <!-- <label for="area" class="font" style="font-size: larger; font-weight: bolder; "> Area</label> -->
+
+                <input type="text" formControlName="area" id="area" class= "d-inline mx-2  hov  form-control w-25 mb-3 " placeholder=" Area">
+            <!-- validation -->
+            <div class="text-danger text-center d-inline"  *ngIf ="area?.invalid && area?.dirty || area?.touched || ref.submitted "> 
+                <p *ngIf ="area?.errors?.['required']"   class="d-inline">Please enter the Area</p>
+                <p *ngIf ="area?.errors?.['minlength']"  class="d-inline">Enter atleast 3 characters</p>
+                <p *ngIf ="area?.errors?.['maxlength']"  class="d-inline">Invalid Area</p>
+              </div> 
+              <!-- <label for="streetName" class="font"   style="font-size: larger; font-weight: bolder; "> Street </label> -->
+              <input type="text" formControlName="streetName" id="streetName" class="d-inline  mx-2 hov  form-control w-25 mb-3   hov" placeholder=" Street Name">
+              <div class="text-danger text-center d-inline"  *ngIf ="streetName?.invalid && streetName?.dirty || streetName?.touched || ref.submitted "> 
+                <p *ngIf ="streetName?.errors?.['required']"   class="d-inline">Please enter Street </p>
+              </div>
+
+
+            </div>
+
+
+            <div class=" text-center">
+                <!-- <label for="hno" class="font"  style="font-size: larger; font-weight: bolder; "> H:NO</label> -->
+                <input type="text" formControlName="hno" id="hno" class="d-inline mx-2  form-control w-25 mb-3 hov" placeholder=" House Number">
+               <!-- validation -->
+               <div class="text-danger text-center d-inline"  *ngIf ="hno?.invalid && hno?.dirty || hno?.touched || ref.submitted "> 
+                <p *ngIf ="hno?.errors?.['required']"   class="d-inline">Please enter the  H:N0</p>
+                <p *ngIf ="hno?.errors?.['minlength']"  class="d-inline">Enter atelat 3 characters</p>
+                <p *ngIf ="hno?.errors?.['maxlength']"  class="d-inline">Invalid Pincode</p>
+              </div>
+              <!-- <label for="bhktype" class="font"   style="font-size: larger; font-weight: bolder; ">Property </label> -->
+
+
+              <input type="text" formControlName="bhktype" id="bhktype" class="d-inline  mx-2 form-control w-25 mb-3 hov" placeholder="Flat/villa/Individual House ">
+              <div class="text-danger text-center d-inline"  *ngIf ="bhktype?.invalid && bhktype?.dirty || bhktype?.touched || ref.submitted "> 
+                <p *ngIf ="bhktype?.errors?.['required']"   class="d-inline">This field is mandatory </p>
+              </div>
+                </div>
+
+
+            <div class=" text-center">
+                <!-- <label for="pincode" class="font"   style="font-size: larger; font-weight: bolder; "> Pincode </label> -->
+            <input type="text" formControlName="pincode" id="pincode" class=" d-inline mx-2  form-control w-25 mb-3 hov" placeholder="Pincode">
+            <!-- validation -->
+            <div class="text-danger text-center d-inline"  *ngIf ="pincode?.invalid && pincode?.dirty || pincode?.touched || ref.submitted "> 
+                <p *ngIf ="pincode?.errors?.['required']"  class="d-inline">Please enter the Pincode </p>
+                <p *ngIf ="pincode?.errors?.['minlength']"  class="d-inline">Entered Number is less than 6 digits,</p>
+                <p *ngIf ="pincode?.errors?.['maxlength']"  class="d-inline">Invalid Pincode</p>
+                <p *ngIf ="pincode?.errors?.['pattern']" class="d-inline"> Only Numericals</p>
+              </div> 
+
+
+              <!-- <label for="city" class="font"   style="font-size: larger; font-weight: bolder; "> City </label> -->
+
+
+              <input type="text" formControlName="city" id="city" class="  d-inline mx-2  form-control w-25  mb-3 hov" placeholder="City">
+            <!-- validation -->
+            <div class="text-danger text-center d-inline"  *ngIf ="city?.invalid && city?.dirty || city?.touched || ref.submitted "> 
+                <p *ngIf ="city?.errors?.['required']"  class="d-inline">Please enter the City</p>
+                <p *ngIf ="city?.errors?.['minlength']" class="d-inline">Enter atleast 3 characters</p>
+                <p *ngIf ="city?.errors?.['maxlength']" class="d-inline">Invalid city</p>
+              </div> 
+            </div>
+
+
+            
+            <!-- <textarea  formControlName="detailsofhouse" class="d-block  mx-auto w-50  form-control  m-3 hov" cols="30" rows="5" placeholder="Deatils of house (No of bedroom, Garden area, Parking facility, Furnishing etc)" ></textarea> -->
+          <div class="text-center">
+              <!-- <label for="rent" class="font"   style="font-size: larger; font-weight: bolder; "> Rent  </label> -->
+              
+            <input type="text" formControlName="rent" id="rent" class=" d-inline w-25 form-control mx-2 m-auto mb-3 hov" placeholder="Rent of house ">
+            <!-- validation -->
+            <div class="text-danger text-center d-inline "  *ngIf ="rent?.invalid && rent?.dirty || rent?.touched || ref.submitted "> 
+                <p *ngIf ="rent?.errors?.['required']"  class="d-inline">Please enter Rent</p>
+                <p *ngIf ="rent?.errors?.['pattern']" class="d-inline"> Only Numericals</p>
+                
+            </div>
+        </div>
+        
+        </div>
+        <div class="form-group">
+        
+            <label for="file">File</label>
+        
+            <input  formControlName="file" id="file"  type="file"  class="form-control" multiple=""  (change)="onFileChange($event)">
+        
+          </div>
+        
+        
+          <img *ngFor='let url of images'  [src]="url" height="150" width="200px" style="margin: 3px;"> <br/>
+
+       <div class="text-center"><button type="submit" class="btn btn-success bhov"> Add Details</button>
+      </div>
+        </form>
+    </div>
+</div>
+
+
+

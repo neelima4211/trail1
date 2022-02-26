@@ -13,7 +13,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input'
-import {MatButtonModule} from '@angular/material/button'
+import {MatButtonModule} from '@angular/material/button';
+import { SignupComponent } from './signup/signup.component';
+import { AddAppartmentComponent } from './add-appartment/add-appartment.component'
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import {MatButtonModule} from '@angular/material/button'
     HomeComponent,
     ContactusComponent,
     LoginComponent,
-    NoPageFoundComponent
+    NoPageFoundComponent,
+    SignupComponent,
+    AddAppartmentComponent
   ],
   imports: [
     BrowserModule,
