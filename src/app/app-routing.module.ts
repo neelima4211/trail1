@@ -11,7 +11,8 @@ const routes: Routes = [
 
   {path:'home',component:HomeComponent},
   {path:'contactus',component:ContactusComponent},
-  {path:'signup',component:SignupComponent},
+  // change this later to navigateByUrl
+  {path:'login/signup',component:SignupComponent},
   {path:'addapparment',component:AddAppartmentComponent},
   {path:'login',component:LoginComponent},
   {path:"",redirectTo:'home',pathMatch:'full'},

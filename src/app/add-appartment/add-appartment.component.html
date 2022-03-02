@@ -1,11 +1,9 @@
 
 <div class="container pt-2">
     <div class=" pb-2">
-        <form (ngSubmit)= "ref.valid && submit()" #ref="ngForm" [formGroup]="dataOfProperty">
+      <!-- chaining -->
+        <form (submit)= "ref.valid && submit()" #ref="ngForm" [formGroup]="dataOfProperty">
           <!-- <div formGroupName="ownerDetails" class="text-center"> -->
-    
-            <div class=" text-center">
-
 <!-- 
                 <div class="mx-auto ">
                     <label for="floatingInput" class="" >Email address</label>
@@ -17,16 +15,39 @@
                   </div> -->
 
 
-
-
                 <!-- <label for="name" class="font" style="font-size: larger; font-weight: bolder; "> Name</label><br> -->
-              <input type="text" formControlName="ownerName" id="name" class=" d-inline mb-3  mt-5 w-25 mx-2 form-control  hov" placeholder=" Name">
-              <!-- validations name -->
+                <div class="row g-2">
+                  <div class="col-md">
+                    <div class="form-floating">
+                      <input type="text" class="form-control"  formControlName="ownerName"  id="floatingInputName" placeholder="name">
+                      <label for="floatingInputName">Name</label>
+                    </div>
+                      <!-- validations name -->
               <div class="text-danger text-center  d-inline"  *ngIf ="ownerName?.invalid && ownerName?.dirty || ownerName?.touched || ref.submitted"> 
                 <p *ngIf ="ownerName?.errors?.['required'] " class="d-inline" >Please enter the  Name</p>
                 <p *ngIf ="ownerName?.errors?.['minlength']"  class="d-inline">Enter atleast 3 characters</p>
                 <p *ngIf ="ownerName?.errors?.['maxlength']"  class="d-inline">Enter max 15 characters</p>
               </div> 
+                  </div>
+                  <div class="col-md">
+                    <div class="form-floating">
+                      <input type="email" class="form-control" id="floatingInputEmail"  formControlName="email" placeholder="name@example.com" >
+                      <label for="floatingInputEmail">Email</label>
+                    </div>
+                    <div class="text-danger  d-inline"  *ngIf ="email?.invalid && email?.dirty || email?.touched || ref.submitted "> 
+                      <p *ngIf ="email?.errors?.['pattern']  "  class=" d-inline">Please enter the valid Email </p>
+                      <p *ngIf ="email?.errors?.['required']" class="d-inline" >Please enter Email </p>
+                      </div>
+
+                  </div>
+                  </div>
+              <!-- <input type="text" formControlName="ownerName" id="name" class="form-control w-25 d-inline  hov" placeholder="Name"> -->
+              <!-- validations name -->
+              <!-- <div class="text-danger text-center  d-inline"  *ngIf ="ownerName?.invalid && ownerName?.dirty || ownerName?.touched || ref.submitted"> 
+                <p *ngIf ="ownerName?.errors?.['required'] " class="d-inline" >Please enter the  Name</p>
+                <p *ngIf ="ownerName?.errors?.['minlength']"  class="d-inline">Enter atleast 3 characters</p>
+                <p *ngIf ="ownerName?.errors?.['maxlength']"  class="d-inline">Enter max 15 characters</p>
+              </div>  -->
               <!-- <input type="text" formControlName="lastName" id="name" class=" d-inline mb-3  w-25 form-control  hov" placeholder=" Last Name">
             
               <div class="text-danger text-center "  *ngIf ="ownerName?.invalid && ownerName?.dirty || ownerName?.touched || ref.submitted"> 
@@ -36,17 +57,16 @@
               </div>  -->
 
               <!-- <label for="email" class="font" style="font-size: larger; font-weight: bolder; "> Email </label> -->
-              <input type="email" formControlName="email" id="email" class="  d-inline mb-3  w-25 mx-2 form-control  hov " placeholder="name@example.com">
+              <!-- <input type="email" formControlName="email" id="email" class="  d-inline mb-3  w-25 mx-2 form-control  hov " placeholder="name@example.com"> -->
               <!-- validations mail -->
-              <div class="text-danger  d-inline  "  *ngIf ="email?.invalid && email?.dirty || email?.touched || ref.submitted "> 
+              <!-- <div class="text-danger  d-inline"  *ngIf ="email?.invalid && email?.dirty || email?.touched || ref.submitted "> 
               <p *ngIf ="email?.errors?.['pattern']  "  class=" d-inline">Please enter the valid Email </p>
               <p *ngIf ="email?.errors?.['required']" class="d-inline" >Please enter Email </p>
-              </div>
-            </div>
+              </div> -->
 
               <!-- <div class="d-flex justify-content-evenly "> -->
                   <!-- <div class="c1 mx-1"> -->
-                      <div class=" text-center">
+                    
                    
                   <!-- </div> -->
 <!-- 
@@ -60,7 +80,6 @@
                       <p *ngIf ="moblieNumber?.errors?.['maxlength']" class="d-inline">Invalid Mobile Number</p>
                       <p *ngIf ="moblieNumber?.errors?.['pattern']"  class="d-inline"> Only Numericals</p>
                     </div> 
-                </div>
                   <!-- </div> -->
               <!-- </div> -->
           <!-- </div> -->

@@ -9,8 +9,17 @@ import {FormBuilder, FormControl,FormGroup, Validators} from '@angular/forms'
 export class LoginComponent implements OnInit {
   submitted: boolean=false;
   fileName: string;
-
-  constructor(public fb: FormBuilder) { }
+  
+  loginForm: FormGroup = new FormGroup({});
+  
+  constructor(public fb: FormBuilder) {
+    this.loginForm = this.fb.group({
+      email:['',[Validators.required,Validators.email]],
+      password:['',[Validators.required,Validators.minLength(6)]]
+      // file:['', [Validators.required]],
+      // fileSource:['', [Validators.required]]
+    })
+   }
 
   ngOnInit(): void {
   }
@@ -18,12 +27,8 @@ export class LoginComponent implements OnInit {
   images = [];
   // for angular material form
   hide = true;
-    loginForm = this.fb.group({
-        email:['',[Validators.required,Validators.email]],
-        password:['',[Validators.required,Validators.minLength(6)]]
-        // file:['', [Validators.required]],
-        // fileSource:['', [Validators.required]]
-      })
+
+    
       
     
       // get f(){

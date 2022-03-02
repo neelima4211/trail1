@@ -1,0 +1,16 @@
+.furniture:hover{
+    color: wheat;
+    background-color: orange;
+
+}
+.rm-info > a{
+    font-size: 10px;
+}
+
+.col-md-4 > img{
+    transition: all 0.3 ease;
+}
+
+.col-md-4 > img:hover{
+    box-shadow: 0 0 10px 1px #dbdbdb;
+}

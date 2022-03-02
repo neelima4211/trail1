@@ -1,4 +1,4 @@
-<form class="form-group bg-light w-50 p-5" style=" margin: auto;" [formGroup]="signUpform" (ngSubmit)= "signUpform.valid && Submit()"
+<form class="form-group bg-light w-50 p-5"  [formGroup]="signUpform" (ngSubmit)= "signUpform.valid && Submit()"
 #formref="ngForm">
 
 <h1>Sign Up</h1>
@@ -75,6 +75,22 @@
   </div>
 </div>
 
+<!--trail of confirm password  didnt succeed-->
+ <!--
+  <div class="mb-3">
+  <div class="form-group">
+  <label for="confirm_password">Confirm Password</label>
+  <input 
+      formControlName="confirm_password"
+      id="confirm_password" 
+      type="password" 
+      class="form-control">
+   <div *ngIf="f.confirm_password.touched && f.confirm_password.invalid" class="alert alert-danger"> 
+      <div *ngIf="f.confirm_password.errors.required">Password is required.</div>
+      <div *ngIf="f.confirm_password.errors.confirmedValidator">Password and Confirm Password must be match.</div>
+  </div>
+</div>
+</div> -->
 
 
 <!-- Profilepic upload -->
@@ -99,9 +115,9 @@
 
 
 <!-- Submit button -->
-<div class="container">
+<div class="container d-flex justify-content-evenly flex-wrap">
 <button type="submit" class="btn btn-dark mb-3 mt-3">Submit</button> 
-
+<!-- on clicking cancel redirect to login page pr remove this button -->
 <button type="button" class="btn btn-danger mb-3 mt-3">Cancel</button>
 
 </div>

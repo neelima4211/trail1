@@ -15,7 +15,17 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input'
 import {MatButtonModule} from '@angular/material/button';
 import { SignupComponent } from './signup/signup.component';
-import { AddAppartmentComponent } from './add-appartment/add-appartment.component'
+import { AddAppartmentComponent } from './add-appartment/add-appartment.component';
+import { FooterComponent } from './footer/footer.component'
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatListModule} from '@angular/material/list';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatCardModule} from '@angular/material/card';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { MatNativeDateModule } from '@angular/material/core';
+
+
 
 @NgModule({
   declarations: [
@@ -25,7 +35,8 @@ import { AddAppartmentComponent } from './add-appartment/add-appartment.componen
     LoginComponent,
     NoPageFoundComponent,
     SignupComponent,
-    AddAppartmentComponent
+    AddAppartmentComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +48,14 @@ import { AddAppartmentComponent } from './add-appartment/add-appartment.componen
     MatFormFieldModule,
     MatIconModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSidenavModule,
+    MatListModule,
+    MatToolbarModule,
+    MatCardModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    CarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]

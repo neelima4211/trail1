@@ -1,1 +1,194 @@
 <p>home works!</p>
+
+<div class="card">
+    <div class="card-body">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate dicta, ratione culpa non unde at similique ipsa velit adipisci soluta nesciunt, magnam voluptatum, consequuntur perferendis excepturi illo. Eum, distinctio rerum ad odio cum aliquid reprehenderit at blanditiis non, possimus perspiciatis ducimus quibusdam, sit ipsa corrupti incidunt eos. Et omnis laudantium adipisci voluptatem enim dolore doloremque voluptatibus modi. Reprehenderit ipsam nihil excepturi ducimus, saepe odit neque nostrum perspiciatis quibusdam nesciunt labore dolore, ratione quasi esse. Necessitatibus!
+    </div>
+</div>
+
+
+<section class="lyt-section">
+  
+    <form >
+    <div class="form-group">
+    <label for="exampleInputEmail1">Location</label>
+    <div class="near-prent">
+    <select class="form-control form-control-sm" name="search_city" required="">
+    <option value="">Select Location</option>
+    <option>Bellandur, Hyd,TELANGANA</option>
+    <option>BTM Layout, Hyd,TELANGANA</option>
+    <option>Marthahalli, Hyd,TELANGANA</option>
+    <option>HSR Layout, Hyd,TELANGANA</option>
+    </select>
+    </div>
+    <mat-form-field>
+    <input matInput [matDatepicker]="picker" [min]="minDate" placeholder="Choose a date">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <div class="form-group">
+    <label for="exampleInputEmail1">Move Out</label>
+    <div>
+    <input type="text" placeholder="Enter Date">
+    </div>
+    </div>
+    <div>
+    <button type="submit" class="btn">Search</button>
+    </div>
+    </div>
+    </form>
+
+
+    <div class="container">  
+    <div class="row">
+    <div class="col-md-4">
+    <h2 class="title">Explore properties</h2>
+    <p class="paragraph">You can now choose from our various options available across furnished, semi furnished and share houses..</p>
+
+        <ul class="list-unstyled">
+            <li><button class="btn furniture">Furnished</button></li>
+            <br>
+            <li><button class="btn furniture">Semi furnished</button></li>
+            <br>
+            <li><button class="btn furniture">Shared houses</button></li>
+        </ul>
+    </div>
+
+
+    <div class="col-md-8">
+        
+    <owl-carousel-o [options]="customOptions">
+        <ng-template carouselSlide *ngFor="   ">  </ng-template> 
+         
+         <ng-template carouselSlide class="carouselslide">
+            <h1>STUDIO</h1>
+            <img src="https://www.rentmystay.com/resource/home/assets/images/room1.png" alt="" class="img-fluid">
+            <p class="rm-info">
+                <a href="https://btm-layout-bengaluru-karnataka-india?room_type=studio" target="_blank" onclick="property_link('BTM Layout');">BTM Layout</a>
+                <span ></span> |
+                <a href="https://hoodi-bengaluru-karnataka-india?room_type=studio" target="_blank" onclick="property_link('Hoodi');">Hoodi</a>
+                <span ></span> |
+                <a href="https://hsr-layout-bengaluru-karnataka-india?room_type=studio" target="_blank" onclick="property_link('HSR Layout');">HSR Layout</a>
+                <span ></span> |
+                <a href="https://jp-nagar-bengaluru-karnataka-india?room_type=studio" target="_blank" onclick="property_link('JP Nagar');">JP Nagar</a>
+                <span ></span> |
+                <a href="https://kasavanahalli-bengaluru-karnataka-india?room_type=studio" target="_blank" onclick="property_link('Kasavanahalli');">Kasavanahalli</a>
+                <span ></span> |
+                <a href="https://koramangala-bengaluru-karnataka-india?room_type=studio" target="_blank" onclick="property_link('Koramangala');">Koramangala</a>
+                <span ></span> |
+                <a href="https://kudlu-gate-bengaluru-karnataka-india?room_type=studio" target="_blank" onclick="property_link('Kudlu gate');">Kudlu gate</a>
+                <span ></span> |
+                <a href="https://kundanahalli-bengaluru-karnataka-india?room_type=studio" target="_blank" onclick="property_link('Kundanahalli');">Kundanahalli</a>
+                <span ></span> |
+                <a href="https://marathahalli-bengaluru-karnataka-india?room_type=studio" target="_blank" onclick="property_link('Marathahalli');">Marathahalli</a>
+                <span ></span> |
+                <a href="https://singasandra-bengaluru-karnataka-india?room_type=studio" target="_blank" onclick="property_link('Singasandra');">Singasandra</a>
+                <span ></span> |
+                <a href="https://whitefield-bengaluru-karnataka-india?room_type=studio" target="_blank" onclick="property_link('Whitefield');">Whitefield</a>
+                </p></ng-template>  
+         <ng-template carouselSlide>
+            <h1>1 BHK</h1> 
+            <img src="https://www.rentmystay.com/resource/home/assets/images/room2.png" alt="" class="img-fluid">
+            <p class="rm-info">
+                <a href="https://btm-layout-bengaluru-karnataka-india?room_type=studio" target="_blank" onclick="property_link('BTM Layout');">BTM Layout</a>
+                <span ></span> |
+                <a href="https://hoodi-bengaluru-karnataka-india?room_type=studio" target="_blank" onclick="property_link('Hoodi');">Hoodi</a>
+                <span ></span> |
+                <a href="https://hsr-layout-bengaluru-karnataka-india?room_type=studio" target="_blank" onclick="property_link('HSR Layout');">HSR Layout</a>
+                <span ></span> |
+                <a href="https://jp-nagar-bengaluru-karnataka-india?room_type=studio" target="_blank" onclick="property_link('JP Nagar');">JP Nagar</a>
+                <span ></span> |
+                <a href="https://kasavanahalli-bengaluru-karnataka-india?room_type=studio" target="_blank" onclick="property_link('Kasavanahalli');">Kasavanahalli</a>
+                <span ></span> |
+                <a href="https://koramangala-bengaluru-karnataka-india?room_type=studio" target="_blank" onclick="property_link('Koramangala');">Koramangala</a>
+                <span ></span> |
+                <a href="https://kudlu-gate-bengaluru-karnataka-india?room_type=studio" target="_blank" onclick="property_link('Kudlu gate');">Kudlu gate</a>
+                <span ></span> |
+                <a href="https://kundanahalli-bengaluru-karnataka-india?room_type=studio" target="_blank" onclick="property_link('Kundanahalli');">Kundanahalli</a>
+                <span ></span> |
+                <a href="https://marathahalli-bengaluru-karnataka-india?room_type=studio" target="_blank" onclick="property_link('Marathahalli');">Marathahalli</a>
+                <span ></span> |
+                <a href="https://singasandra-bengaluru-karnataka-india?room_type=studio" target="_blank" onclick="property_link('Singasandra');">Singasandra</a>
+                <span ></span> |
+                <a href="https://whitefield-bengaluru-karnataka-india?room_type=studio" target="_blank" onclick="property_link('Whitefield');">Whitefield</a>
+                </p></ng-template>  
+         <ng-template carouselSlide>
+            <h1>2 BHK</h1>
+            <img src="https://www.rentmystay.com/resource/home/assets/images/room3.png" alt="" class="img-fluid">
+            <p class="rm-info">
+                <a href="https://btm-layout-bengaluru-karnataka-india?room_type=studio" target="_blank" onclick="property_link('BTM Layout');">BTM Layout</a>
+                <span ></span> |
+                <a href="https://hoodi-bengaluru-karnataka-india?room_type=studio" target="_blank" onclick="property_link('Hoodi');">Hoodi</a>
+                <span ></span> |
+                <a href="https://hsr-layout-bengaluru-karnataka-india?room_type=studio" target="_blank" onclick="property_link('HSR Layout');">HSR Layout</a>
+                <span ></span> |
+                <a href="https://jp-nagar-bengaluru-karnataka-india?room_type=studio" target="_blank" onclick="property_link('JP Nagar');">JP Nagar</a>
+                <span ></span> |
+                <a href="https://kasavanahalli-bengaluru-karnataka-india?room_type=studio" target="_blank" onclick="property_link('Kasavanahalli');">Kasavanahalli</a>
+                <span ></span> |
+                <a href="https://koramangala-bengaluru-karnataka-india?room_type=studio" target="_blank" onclick="property_link('Koramangala');">Koramangala</a>
+                <span ></span> |
+                <a href="https://kudlu-gate-bengaluru-karnataka-india?room_type=studio" target="_blank" onclick="property_link('Kudlu gate');">Kudlu gate</a>
+                <span ></span> |
+                <a href="https://kundanahalli-bengaluru-karnataka-india?room_type=studio" target="_blank" onclick="property_link('Kundanahalli');">Kundanahalli</a>
+                <span ></span> |
+                <a href="https://marathahalli-bengaluru-karnataka-india?room_type=studio" target="_blank" onclick="property_link('Marathahalli');">Marathahalli</a>
+                <span ></span> |
+                <a href="https://singasandra-bengaluru-karnataka-india?room_type=studio" target="_blank" onclick="property_link('Singasandra');">Singasandra</a>
+                <span ></span> |
+                <a href="https://whitefield-bengaluru-karnataka-india?room_type=studio" target="_blank" onclick="property_link('Whitefield');">Whitefield</a>
+                </p></ng-template>  
+       </owl-carousel-o>
+    </div>
+    </div>
+    </div>
+    </section>
+
+
+    <section class="lyt-section">
+        <div class="container">
+        <div class="row cust-center-align">
+        <div class="col-md-6">
+        <div class="bs-heading">
+        <h2 class="title wow fadeInUp" >Why SWAGRUHAM?</h2>
+        </div>
+        <div class="bs-why-rent ">
+        <ul>
+        <li>Fully furnished and ideal for long term
+        and short term <span class="new-line"></span> rentals. Alt to Service Apartments and
+        hotels.</li>
+        <li > largest network of curated rental houses</li>
+        <li > Rent for Any Duration</li>
+        <li > Zero Brokerage Charges</li>
+        <li >Families, Couples, Friends, Singles Welcome!</li>
+        </ul>
+        </div>
+        </div>
+        <div class="col-md-6">
+        <div class="wow fadeInUp" >
+        <picture>
+        <source media="(min-width: 650px)" srcset="https://www.rentmystay.com/resource/home/assets/images/mob-booknew.png">
+        <img class="img-fluid" alt="book-on-mobile" data-pagespeed-url-hash="3281832354" src="https://www.rentmystay.com/resource/home/assets/images/Vectornew.png" onerror="this.onerror=null;pagespeed.lazyLoadImages.loadIfVisibleAndMaybeBeacon(this);">
+        </picture>
+        </div>
+        </div>
+        </div>
+        </div>
+        </section>
+
+    
+        <section class="lyt-section">
+            <h2 class="title">Our App in news</h2>
+            <p class="paragraph wow fadeInUp" >Game Changer for House Rental Trade in India</p>
+            <div class="container">   
+            <div class="row">
+                <div class="col-md-4 col-lg-4"><img src="https://www.rentmystay.com/resource/home/assets/images/ur-story.png" alt=""></div>
+                <div class="col-md-4 col-lg-4"><img src="https://www.rentmystay.com/resource/home/assets/images/dh-logo.png" alt=""></div>
+                <div class="col-md-4 col-lg-4"><img src="https://www.rentmystay.com/resource/home/assets/images/xstartup.png" alt=""></div>
+            </div>
+            </div>
+
+            
+            </section>
+
+
