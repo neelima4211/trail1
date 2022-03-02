@@ -1,9 +1,8 @@
 
-<div class="container pt-2">
-    <div class=" pb-2">
+<section>
       <!-- chaining -->
-        <form (submit)= "ref.valid && submit()" #ref="ngForm" [formGroup]="dataOfProperty">
-          <!-- <div formGroupName="ownerDetails" class="text-center"> -->
+        <form (submit)= "ref.valid && submit()"  #ref="ngForm" [formGroup]="dataOfProperty">
+          <div class="container">          <!-- <div formGroupName="ownerDetails" class="text-center"> -->
 <!-- 
                 <div class="mx-auto ">
                     <label for="floatingInput" class="" >Email address</label>
@@ -16,22 +15,36 @@
 
 
                 <!-- <label for="name" class="font" style="font-size: larger; font-weight: bolder; "> Name</label><br> -->
+            
+                <div class="form-floating">
+                  <input type="text" class="form-control mb-3 "  formControlName="ownerName"  id="floatingInputName" placeholder="name">
+                  <label for="floatingInputName">Name</label>
+                </div>
+                  <!-- validations name -->
+          <div class="text-danger text-center d-inline"  *ngIf ="ownerName?.invalid && ownerName?.dirty || ownerName?.touched || ref.submitted"> 
+            <p *ngIf ="ownerName?.errors?.['required'] " class="d-inline" >Please enter the  Name</p>
+            <p *ngIf ="ownerName?.errors?.['minlength']"  class="d-inline">Enter atleast 3 characters</p>
+            <p *ngIf ="ownerName?.errors?.['maxlength']"  class="d-inline">Enter max 15 characters</p>
+          </div>
+
                 <div class="row g-2">
                   <div class="col-md">
                     <div class="form-floating">
-                      <input type="text" class="form-control"  formControlName="ownerName"  id="floatingInputName" placeholder="name">
-                      <label for="floatingInputName">Name</label>
+                      <input type="tel" formControlName="moblieNumber" id="moblieNumber" class=" w-50 form-control  hov" placeholder=" Mobile Number">
+                      <label for="moblieNumber">Number</label>
                     </div>
-                      <!-- validations name -->
-              <div class="text-danger text-center  d-inline"  *ngIf ="ownerName?.invalid && ownerName?.dirty || ownerName?.touched || ref.submitted"> 
-                <p *ngIf ="ownerName?.errors?.['required'] " class="d-inline" >Please enter the  Name</p>
-                <p *ngIf ="ownerName?.errors?.['minlength']"  class="d-inline">Enter atleast 3 characters</p>
-                <p *ngIf ="ownerName?.errors?.['maxlength']"  class="d-inline">Enter max 15 characters</p>
-              </div> 
+                      <!-- validations mobile -->
+                      <div class="text-danger d-inline"  *ngIf ="moblieNumber?.invalid && moblieNumber?.dirty || moblieNumber?.touched || ref.submitted "> 
+                  <p *ngIf ="moblieNumber?.errors?.['required']"  class="d-inline" >Please enter the  Mobile Number </p>
+                      <p *ngIf ="moblieNumber?.errors?.['minlength']"  class="d-inline">Entered Number is less than 10 digits</p>
+                      <p *ngIf ="moblieNumber?.errors?.['maxlength']" class="d-inline">Invalid Mobile Number</p>
+                      <p *ngIf ="moblieNumber?.errors?.['pattern']"  class="d-inline"> Only Numericals</p>
+              </div>
+             
                   </div>
                   <div class="col-md">
                     <div class="form-floating">
-                      <input type="email" class="form-control" id="floatingInputEmail"  formControlName="email" placeholder="name@example.com" >
+                      <input type="email" class="form-control w-50" id="floatingInputEmail"  formControlName="email" placeholder="name@example.com" >
                       <label for="floatingInputEmail">Email</label>
                     </div>
                     <div class="text-danger  d-inline"  *ngIf ="email?.invalid && email?.dirty || email?.touched || ref.submitted "> 
@@ -40,7 +53,7 @@
                       </div>
 
                   </div>
-                  </div>
+                </div>
               <!-- <input type="text" formControlName="ownerName" id="name" class="form-control w-25 d-inline  hov" placeholder="Name"> -->
               <!-- validations name -->
               <!-- <div class="text-danger text-center  d-inline"  *ngIf ="ownerName?.invalid && ownerName?.dirty || ownerName?.touched || ref.submitted"> 
@@ -72,89 +85,117 @@
 <!-- 
                   <div class="c1"> -->
                     <!-- <label for="moblieNumber" class="font" style="font-size: larger; font-weight: bolder; "> Moblie No</label> -->
-                    <input type="tel" formControlName="moblieNumber" id="moblieNumber" class=" d-inline mb-3 mx-2 w-25 form-control  hov" placeholder=" Mobile Number">
+                    <!-- <input type="tel" formControlName="moblieNumber" id="moblieNumber" class=" d-inline mb-3 mx-2 w-25 form-control  hov" placeholder=" Mobile Number"> -->
                     <!-- validations number -->
-                    <div class="text-danger d-inline"  *ngIf ="moblieNumber?.invalid && moblieNumber?.dirty || moblieNumber?.touched || ref.submitted "> 
+                    <!-- <div class="text-danger d-inline"  *ngIf ="moblieNumber?.invalid && moblieNumber?.dirty || moblieNumber?.touched || ref.submitted "> 
                       <p *ngIf ="moblieNumber?.errors?.['required']"  class="d-inline" >Please enter the  Mobile Number </p>
                       <p *ngIf ="moblieNumber?.errors?.['minlength']"  class="d-inline">Entered Number is less than 10 digits</p>
                       <p *ngIf ="moblieNumber?.errors?.['maxlength']" class="d-inline">Invalid Mobile Number</p>
                       <p *ngIf ="moblieNumber?.errors?.['pattern']"  class="d-inline"> Only Numericals</p>
-                    </div> 
+                    </div>  -->
                   <!-- </div> -->
               <!-- </div> -->
           <!-- </div> -->
 
-          <div formGroupName="description">
-            <div class=" text-center">
+          <div formGroupName="description" class="mt-4 description">
                 <!-- <label for="area" class="font" style="font-size: larger; font-weight: bolder; "> Area</label> -->
-
-                <input type="text" formControlName="area" id="area" class= "d-inline mx-2  hov  form-control w-25 mb-3 " placeholder=" Area">
+              <div class="row d-flex justify-content-evenly mb-3 g-2">
+                <div class="col-md col-sm-4">
+                <div class="form-floating">
+                  <input type="text" formControlName="area" id="area" class= "d-inline hov  form-control w-50" placeholder=" Area" >
+                  <label for="area">Area</label>
+                </div>
+                <!-- <input type="text" formControlName="area" id="area" class= "d-inline hov  form-control w-25 mb-3 " placeholder=" Area"> -->
             <!-- validation -->
             <div class="text-danger text-center d-inline"  *ngIf ="area?.invalid && area?.dirty || area?.touched || ref.submitted "> 
                 <p *ngIf ="area?.errors?.['required']"   class="d-inline">Please enter the Area</p>
                 <p *ngIf ="area?.errors?.['minlength']"  class="d-inline">Enter atleast 3 characters</p>
                 <p *ngIf ="area?.errors?.['maxlength']"  class="d-inline">Invalid Area</p>
               </div> 
+            </div>
+
+            <div class="col-md  col-sm-4 col-xs-12">
               <!-- <label for="streetName" class="font"   style="font-size: larger; font-weight: bolder; "> Street </label> -->
-              <input type="text" formControlName="streetName" id="streetName" class="d-inline  mx-2 hov  form-control w-25 mb-3   hov" placeholder=" Street Name">
+              <div class="form-floating">
+                <input type="text" formControlName="streetName" id="streetName" class="d-inline  hov  form-control w-50 hov" placeholder="Street Name" >
+                <label for="streetName">streetname</label>
+              </div>
+             
+              <!-- <input type="text" formControlName="streetName" id="streetName" class="d-inline  hov  form-control w-25 mb-3   hov" placeholder=" Street Name"> -->
               <div class="text-danger text-center d-inline"  *ngIf ="streetName?.invalid && streetName?.dirty || streetName?.touched || ref.submitted "> 
                 <p *ngIf ="streetName?.errors?.['required']"   class="d-inline">Please enter Street </p>
               </div>
-
-
             </div>
 
-
-            <div class=" text-center">
+             <div class="col-md col-sm-4">
                 <!-- <label for="hno" class="font"  style="font-size: larger; font-weight: bolder; "> H:NO</label> -->
-                <input type="text" formControlName="hno" id="hno" class="d-inline mx-2  form-control w-25 mb-3 hov" placeholder=" House Number">
+                <div class="form-floating">
+                  <input type="text" formControlName="hno" id="hno" class="d-inline form-control w-50 hov" placeholder=" House Number">
+                  <label for="hno">House no</label>
+                </div>
+                
+                <!-- <input type="text" formControlName="hno" id="hno" class="d-inline form-control w-25 mb-3 hov" placeholder=" House Number"> -->
                <!-- validation -->
                <div class="text-danger text-center d-inline"  *ngIf ="hno?.invalid && hno?.dirty || hno?.touched || ref.submitted "> 
                 <p *ngIf ="hno?.errors?.['required']"   class="d-inline">Please enter the  H:N0</p>
                 <p *ngIf ="hno?.errors?.['minlength']"  class="d-inline">Enter atelat 3 characters</p>
                 <p *ngIf ="hno?.errors?.['maxlength']"  class="d-inline">Invalid Pincode</p>
               </div>
+            </div>
               <!-- <label for="bhktype" class="font"   style="font-size: larger; font-weight: bolder; ">Property </label> -->
+            </div>
 
 
-              <input type="text" formControlName="bhktype" id="bhktype" class="d-inline  mx-2 form-control w-25 mb-3 hov" placeholder="Flat/villa/Individual House ">
+            <div class="row d-flex justify-content-evenly mb-3 g-2">
+            
+            <div class="col-md">
+              <div class="form-floating">
+                <input type="text" formControlName="bhktype" id="bhktype" class="d-inline form-control w-50 hov" placeholder="Flat/villa/Individual House ">
+                <label for="bhktype">BHK</label>
+              </div>
               <div class="text-danger text-center d-inline"  *ngIf ="bhktype?.invalid && bhktype?.dirty || bhktype?.touched || ref.submitted "> 
                 <p *ngIf ="bhktype?.errors?.['required']"   class="d-inline">This field is mandatory </p>
               </div>
-                </div>
-
-
-            <div class=" text-center">
-                <!-- <label for="pincode" class="font"   style="font-size: larger; font-weight: bolder; "> Pincode </label> -->
-            <input type="text" formControlName="pincode" id="pincode" class=" d-inline mx-2  form-control w-25 mb-3 hov" placeholder="Pincode">
-            <!-- validation -->
+            </div>
+            
+            <div class="col-md">  
+            <!-- <label for="pincode" class="font"   style="font-size: larger; font-weight: bolder; "> Pincode </label> -->
+            <div class="form-floating">
+              <input type="text" formControlName="pincode" id="pincode" class=" d-inline form-control w-50 mb-3 hov" placeholder="Pincode">
+              <label for="pincode">Pincode</label>
+            </div>
+        <!-- validation -->
             <div class="text-danger text-center d-inline"  *ngIf ="pincode?.invalid && pincode?.dirty || pincode?.touched || ref.submitted "> 
                 <p *ngIf ="pincode?.errors?.['required']"  class="d-inline">Please enter the Pincode </p>
                 <p *ngIf ="pincode?.errors?.['minlength']"  class="d-inline">Entered Number is less than 6 digits,</p>
                 <p *ngIf ="pincode?.errors?.['maxlength']"  class="d-inline">Invalid Pincode</p>
                 <p *ngIf ="pincode?.errors?.['pattern']" class="d-inline"> Only Numericals</p>
               </div> 
+            </div>
 
 
               <!-- <label for="city" class="font"   style="font-size: larger; font-weight: bolder; "> City </label> -->
 
-
-              <input type="text" formControlName="city" id="city" class="  d-inline mx-2  form-control w-25  mb-3 hov" placeholder="City">
+            <div class="col-md">
+              <div class="form-floating">
+                <input type="text" formControlName="city" id="city" class="  d-inline form-control w-50  mb-3 hov" placeholder="City">
+                <label for="city">city</label>
+              </div>
             <!-- validation -->
             <div class="text-danger text-center d-inline"  *ngIf ="city?.invalid && city?.dirty || city?.touched || ref.submitted "> 
                 <p *ngIf ="city?.errors?.['required']"  class="d-inline">Please enter the City</p>
                 <p *ngIf ="city?.errors?.['minlength']" class="d-inline">Enter atleast 3 characters</p>
                 <p *ngIf ="city?.errors?.['maxlength']" class="d-inline">Invalid city</p>
               </div> 
+
             </div>
+      </div>
 
-
-            
             <!-- <textarea  formControlName="detailsofhouse" class="d-block  mx-auto w-50  form-control  m-3 hov" cols="30" rows="5" placeholder="Deatils of house (No of bedroom, Garden area, Parking facility, Furnishing etc)" ></textarea> -->
-          <div class="text-center">
+        
               <!-- <label for="rent" class="font"   style="font-size: larger; font-weight: bolder; "> Rent  </label> -->
               
-            <input type="text" formControlName="rent" id="rent" class=" d-inline w-25 form-control mx-2 m-auto mb-3 hov" placeholder="Rent of house ">
+            <input type="text" formControlName="rent" id="rent" class=" d-inline w-50 form-control m-auto mb-3 hov" placeholder="Rent of house ">
             <!-- validation -->
             <div class="text-danger text-center d-inline "  *ngIf ="rent?.invalid && rent?.dirty || rent?.touched || ref.submitted "> 
                 <p *ngIf ="rent?.errors?.['required']"  class="d-inline">Please enter Rent</p>
@@ -163,23 +204,20 @@
             </div>
         </div>
         
-        </div>
-        <div class="form-group">
+   
         
-            <label for="file">File</label>
-        
-            <input  formControlName="file" id="file"  type="file"  class="form-control" multiple=""  (change)="onFileChange($event)">
-        
+        <div class="form-group">      
+            <label for="file">File</label>     
+            <input  formControlName="file" id="file"  type="file"  class="form-control w-75" multiple=""  (change)="onFileChange($event)"> 
           </div>
-        
-        
-          <img *ngFor='let url of images'  [src]="url" height="150" width="200px" style="margin: 3px;"> <br/>
-
-       <div class="text-center"><button type="submit" class="btn btn-success bhov"> Add Details</button>
-      </div>
+    
+              <img *ngFor='let url of images'  [src]="url" height="150" width="200px" style="margin: 3px;"> <br/>
+              <div class="text-center"><button type="submit" class="btn btn-success bhov"> Add Details</button>
+             </div>
+             </div>
         </form>
-    </div>
-</div>
+
+  </section>
 
 
 

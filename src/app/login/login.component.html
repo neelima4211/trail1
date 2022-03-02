@@ -7,8 +7,7 @@
             </div>
     
                 <div class="col-lg-7  d-block m-auto">
-                    <h1 class="animate__animated animate__heartBeat text-center">Swagruham</h1>
-    
+                    <h1 class="text-center">Swagruham</h1>
                     <form class="form" [formGroup]="loginForm" (submit)="formSubmit()">
     
                         <!-- <input type="email" class="form-control d-block m-auto shadow-none rounded-pill w-50 text-center mt-3" formControlName="email" placeholder="Email" autocomplete="true">
@@ -25,25 +24,25 @@
                  
                             <mat-form-field appearance="standard" class=" d-block m-auto w-50 mb-2"> 
                               <mat-label>Enter your email</mat-label>
-                              <input matInput formControlName="email" required>
+                              <input matInput formControlName="email" required autocomplete="false">
                               <mat-error *ngIf="loginForm.controls['email'].touched && loginForm.controls['email'].invalid">invalid email</mat-error>
                             </mat-form-field>
                          
 
                           <mat-form-field class="full-width d-block m-auto w-50">
                             <mat-label>Enter your password</mat-label>
-                            <!-- <input matInput [type]="hide ? 'password' : 'text'" formControlName="password"> -->
-                            
                             <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
                               <button type="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                                   <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                               </button>
 
-                              <mat-error *ngIf="loginForm.controls['password'].touched && loginForm.controls['password'].invalid">invalid password
+                              <!-- <mat-error *ngIf="loginForm.controls['password'].touched && loginForm.controls['password'].invalid">invalid password -->
                                   <!-- <div *ngIf=" loginForm.controls['password'].touched && loginForm.controls['password'].invalid" class="text-danger text-center"> -->
-                                      <div *ngIf="submitted && loginForm.controls['password'].errors?.['required']">password is required</div>
+                                      <mat-error *ngIf="(submitted || loginForm.controls['password'].touched) && (loginForm.controls['password'].errors?.['required'])">password is required</mat-error>
+                                      <mat-error *ngIf="(submitted && loginForm.controls['password'].errors?.['minlength'])">password must have more than 6</mat-error>
+                                      <mat-error *ngIf="submitted && loginForm.controls['password'].errors?.['pattern']">must conatin UpperCase,Special Character</mat-error>
                                     <!-- </div> -->
-                              </mat-error>
+                              <!-- </mat-error> -->
       
                         </mat-form-field>
 

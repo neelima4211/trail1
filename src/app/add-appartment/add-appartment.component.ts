@@ -112,6 +112,7 @@ export class AddAppartmentComponent implements OnInit {
         for (let i = 0; i < filesAmount; i++) {
 
                 var reader = new FileReader();
+                console.log(reader)
 
    
 
@@ -121,18 +122,10 @@ export class AddAppartmentComponent implements OnInit {
 
                    this.images.push(event.target.result);
 
-   
-
-                   this.dataOfProperty.patchValue({
-
+                 this.dataOfProperty.patchValue({
                       fileSource: this.images
-
                    });
-
                 }
-
- 
-
                 reader.readAsDataURL(event.target.files[i]);
 
         }

@@ -1,0 +1,22 @@
+.container,.description,.row {
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media screen and (max-width:768px) {
+    #moblieNumber,#floatingInputEmail{
+        width: 100% !important;
+    }
+
+    #area,#streetName{
+        width: 50% !important;
+    }
+}
+
+
+@media screen and (max-width:380px) {
+    .row,.col-md{
+        justify-content: center !important;
+    }
+    
+}
