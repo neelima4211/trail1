@@ -15,9 +15,10 @@
 
 
                 <!-- <label for="name" class="font" style="font-size: larger; font-weight: bolder; "> Name</label><br> -->
-            
+                <div class="row g-2">
+                  <div class="col-md">
                 <div class="form-floating">
-                  <input type="text" class="form-control mb-3 "  formControlName="ownerName"  id="floatingInputName" placeholder="name">
+                  <input type="text" class="form-control w-50 mb-3 "  formControlName="ownerName"  id="floatingInputName" placeholder="name">
                   <label for="floatingInputName">Name</label>
                 </div>
                   <!-- validations name -->
@@ -26,8 +27,8 @@
             <p *ngIf ="ownerName?.errors?.['minlength']"  class="d-inline">Enter atleast 3 characters</p>
             <p *ngIf ="ownerName?.errors?.['maxlength']"  class="d-inline">Enter max 15 characters</p>
           </div>
+        </div>
 
-                <div class="row g-2">
                   <div class="col-md">
                     <div class="form-floating">
                       <input type="tel" formControlName="moblieNumber" id="moblieNumber" class=" w-50 form-control  hov" placeholder=" Mobile Number">

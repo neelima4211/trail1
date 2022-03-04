@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core'; 
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import {FormBuilder, FormControl,FormGroup} from '@angular/forms'
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -7,9 +8,20 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { 
+  constructor(public fb:FormBuilder) { 
   }
   minDate = new Date();
+
+  range =this.fb.group({
+   location:[],
+    start:[],
+    end: [],
+  });
+  locations:string[]=['Secunderabad','Ameerpet','SaroorNagar','KPHP','LakdiKapool']  
+
+  search(){
+    console.log(this.range.value)
+  }
 
   ngOnInit(): void {
   }

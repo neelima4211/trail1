@@ -23,7 +23,10 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatCardModule} from '@angular/material/card';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { CarouselModule } from 'ngx-owl-carousel-o';
-import { MatNativeDateModule } from '@angular/material/core';
+import { MatNativeDateModule, MatOptionModule } from '@angular/material/core';
+import { MatSelectModule } from '@angular/material/select';
+import { CardComponent } from './card/card.component';
+import { CarouselComponent } from './carousel/carousel.component';
 
 
 
@@ -36,7 +39,9 @@ import { MatNativeDateModule } from '@angular/material/core';
     NoPageFoundComponent,
     SignupComponent,
     AddAppartmentComponent,
-    FooterComponent
+    FooterComponent,
+    CardComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,
@@ -55,6 +60,8 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatCardModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatOptionModule,
+    MatSelectModule,
     CarouselModule
   ],
   providers: [],

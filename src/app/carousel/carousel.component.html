@@ -1,0 +1,51 @@
+<p>carousel works!</p>
+<owl-carousel-o [options]="customOptions">
+    <ng-template carouselSlide>
+  <app-card>
+  </app-card>
+</ng-template>  
+
+<ng-template carouselSlide> 
+     <app-card>
+    </app-card>
+</ng-template>  
+    
+<ng-template carouselSlide>
+<app-card>
+  <strong class="card-text author">User Experience Design Essentials</strong>
+  </app-card>
+</ng-template>  
+
+    
+<ng-template carouselSlide>
+<app-card>
+  </app-card>
+</ng-template>  
+    
+<ng-template carouselSlide>Slide 3</ng-template>  
+  
+</owl-carousel-o>
+
+<owl-carousel-o  [options]="customOptions">
+        <ng-template carouselSlide *ngFor="let image of slides;let i= index">
+          <div class="card">
+            <img src="{{image.src}}" class="card-img-top h-100" alt="...">
+            <div class="card-body">
+              <p>{{image.id}}</p>
+
+              <h5 class="card-title">username:{{image.username}}</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <div class="container" [class.show]="show">
+                {{image.address}} <br>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                 Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+            </div>
+         
+            </div>
+          </div>
+          
+
+          </ng-template>
+        </owl-carousel-o>
+        <button class="btn" (click)="show = !show">{{ show ? 'Show less': 'Show More' }}</button>
+        <button class="btn" role="button"><span class="text">Button</span><span>Alternate text</span></button>
