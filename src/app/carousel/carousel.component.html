@@ -1,5 +1,5 @@
-<p>carousel works!</p>
-<owl-carousel-o [options]="customOptions">
+<!-- <p>carousel works!</p> -->
+<!-- <owl-carousel-o [options]="customOptions">
     <ng-template carouselSlide>
   <app-card>
   </app-card>
@@ -26,6 +26,8 @@
   
 </owl-carousel-o>
 
+ -->
+
 <owl-carousel-o  [options]="customOptions">
         <ng-template carouselSlide *ngFor="let image of slides;let i= index">
           <div class="card">
@@ -47,5 +49,4 @@
 
           </ng-template>
         </owl-carousel-o>
-        <button class="btn" (click)="show = !show">{{ show ? 'Show less': 'Show More' }}</button>
-        <button class="btn" role="button"><span class="text">Button</span><span>Alternate text</span></button>
+        <!-- <button class="btn" (click)="show = !show">{{ show ? 'Show less': 'Show More' }}</button> -->

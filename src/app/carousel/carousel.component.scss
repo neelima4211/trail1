@@ -9,9 +9,15 @@
     overflow: visible;
     height: auto;
   }
-
-  .img{
-      height: 100%;
+  .card{
+    border-radius: 25px;
+  }
+  
+  img {
+      border-top-right-radius: 25px;
+      border-top-left-radius: 25px;
+      height: 200px !important;
+     
   }
 
 

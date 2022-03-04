@@ -33,7 +33,7 @@ export class CarouselComponent implements OnInit {
     dots: false,
     navSpeed: 500,
     margin:20,
-    navText: ['<i class="fa fa-light fa-arrow-left"></i>', '<i class="fa fa-caret-right"></i>'],
+    navText: ['<div class="nav-button owl-prev" style:" background-color:"black";"> ‹ </div>', '<div class="nav-button owl-next">›</div>'],
     responsive: {
       0: {
         items: 1

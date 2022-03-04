@@ -33,7 +33,7 @@ export class HomeComponent implements OnInit {
     dots: true, //
     navSpeed: 500,
     margin:50,
-    navText: ['<mat-icon>arrow_backward</mat-icon>', ' <mat-icon>arrow_forward</mat-icon> '], //icons u want for navigation purpose
+    navText: ['<', ' >'], //icons u want for navigation purpose
     responsive: { // to tell how many slides to fit in the screen for that particular size
       0: {
         items: 1
